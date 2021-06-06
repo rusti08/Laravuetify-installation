@@ -1,0 +1,37 @@
+$ composer create-project --prefer-dist laravel/laravel project-name
+
+$ composer require laravel/ui
+
+$ php artisan ui vue --auth
+
+$ npm install
+
+$ npm run dev
+
+//if error use 'npm audit fix' then use 'npm run dev' again
+
+$ npm install vuetify
+
+$ npm install sass@~1.32 sass-loader deepmerge -D
+
+//then create a folder 'resources/plugins/vuetify.js' then paste the code below
+
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
+Vue.use(Vuetify)
+
+const opts = {}
+
+export default new Vuetify(opts)
+
+// open app.js then paste the code below
+
+import Vuetify from '../plugins/vuetify' // path to vuetify export
+
+new Vue({
+  vuetify: Vuetify,
+}).$mount('#app')
+
+// paste into /resources/view/layouts/app.blade.php
